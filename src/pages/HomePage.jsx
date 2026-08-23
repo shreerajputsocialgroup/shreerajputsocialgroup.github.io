@@ -69,14 +69,6 @@ const teamMembers = [
     name: 'જયેશ એન. સિસોદિયા',
     image: member3,
   },
-  {
-    name: 'Person 2',
-    image: '',
-  },
-  {
-    name: 'Person 3',
-    image: '',
-  },
 ]
 
 function HomePage() {
