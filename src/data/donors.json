@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "name": "Mer Ashokbhai Laxmanbhai",
+        "image": "member-1"
+    },
+    {
+        "id": 2,
+        "name": "Sisodiya Jayesh N.",
+        "image": "member-3"
+    },
+    {
+        "id": 3,
+        "name": "Rathod Naranji dhanubha",
+        "image": "donor-3"
+    },
+    {
+        "id": 4,
+        "name": "Rathod Ghanshyamsinh",
+        "image": "member-2"
+    },
+    {
+        "id": 5,
+        "name": "Abda Chandresh Pravinbhai",
+        "image": ""
+    },
+    {
+        "id": 6,
+        "name": "Barach Bharatsinh K.",
+        "image": ""
+    },
+    {
+        "id": 7,
+        "name": "Batti Balvir Devjibhai",
+        "image": ""
+    },
+    {
+        "id": 8,
+        "name": "Chauhan Dineshbhai K.",
+        "image": ""
+    },
+    {
+        "id": 9,
+        "name": "Abda Vijaybhai Laljibhai",
+        "image": ""
+    },
+    {
+        "id": 10,
+        "name": "Amar Ushaben Dineshbhai",
+        "image": ""
+    },
+    {
+        "id": 11,
+        "name": "Batti Mohanbhai Bhikhalal",
+        "image": ""
+    },
+    {
+        "id": 12,
+        "name": "Bhati Jayaben Ketanbhai",
+        "image": ""
+    },
+    {
+        "id": 13,
+        "name": "Bhati Narottamsinh Hajubha",
+        "image": ""
+    }
+]

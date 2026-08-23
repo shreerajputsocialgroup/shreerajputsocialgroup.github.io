@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "familyHead": "Ashok Mer",
+        "city": "Bhuj",
+        "contact": "9427250955"
+    },
+    {
+        "id": 2,
+        "familyHead": "Ghanshyamsinh Rathod",
+        "city": "Bhuj",
+        "contact": "9876543211"
+    },
+    {
+        "id": 3,
+        "familyHead": "Devendra Mer",
+        "city": "Gandhidham",
+        "contact": "9427250955"
+    }
+]
