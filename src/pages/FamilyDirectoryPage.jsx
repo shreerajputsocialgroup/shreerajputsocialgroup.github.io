@@ -131,10 +131,6 @@ export default function FamilyList() {
                 <strong>City</strong>
               </TableCell>
 
-              <TableCell>
-                <strong>Contact Number</strong>
-              </TableCell>
-
               <TableCell align="center">
                 <strong>Action</strong>
               </TableCell>
@@ -154,10 +150,6 @@ export default function FamilyList() {
 
                   <TableCell>
                     {family.city}
-                  </TableCell>
-
-                  <TableCell>
-                    {family.contact}
                   </TableCell>
 
                   <TableCell align="center">
