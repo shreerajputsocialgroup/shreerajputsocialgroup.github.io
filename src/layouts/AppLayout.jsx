@@ -29,17 +29,51 @@ const navItems = [
 
 ]
 
+const VISITOR_COUNTER_NAMESPACE = 'sbrsg'
+const VISITOR_COUNTER_KEY = 'homepage'
+const VISITOR_COUNTED_STORAGE_KEY = 'sbrsg_visitor_counted'
+const VISITOR_COUNTER_BASE = 'https://abacus.jsn.cam'
+
 function AppLayout() {
   const [visitorCount, setVisitorCount] =
     useState(null)
 
   useEffect(() => {
-    fetch('https://api.countapi.xyz/hit/sbrsg/homepage')
-      .then((res) => res.json())
-      .then((data) => {
-        setVisitorCount(data.value)
+    const controller = new AbortController()
+    let isNewVisitor = false
+
+    try {
+      isNewVisitor =
+        window.localStorage.getItem(VISITOR_COUNTED_STORAGE_KEY) !== '1'
+      if (isNewVisitor) {
+        window.localStorage.setItem(VISITOR_COUNTED_STORAGE_KEY, '1')
+      }
+    } catch {
+      isNewVisitor = true
+    }
+
+    const action = isNewVisitor ? 'hit' : 'get'
+    const url = `${VISITOR_COUNTER_BASE}/${action}/${VISITOR_COUNTER_NAMESPACE}/${VISITOR_COUNTER_KEY}`
+
+    fetch(url, { signal: controller.signal })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error('Unable to load visitor count')
+        }
+        return res.json()
       })
-      .catch((err) => console.error(err))
+      .then((data) => {
+        if (typeof data.value === 'number') {
+          setVisitorCount(data.value)
+        }
+      })
+      .catch((err) => {
+        if (err.name !== 'AbortError') {
+          console.error(err)
+        }
+      })
+
+    return () => controller.abort()
   }, [])
 
   return (
@@ -259,7 +293,9 @@ function AppLayout() {
                 mb: 1,
               }}
             >
-              {visitorCount ?? '...'}
+              {visitorCount == null
+                ? '...'
+                : visitorCount.toLocaleString('en-IN')}
             </Typography>
 
             <Typography sx={{ mb: 3 }}>
